@@ -1,4 +1,4 @@
-import CreateEmployeeForm from "../components/CreateEmployeeForm";
+import CreateEmployeeForm from "../components/CreateEmployeeForm/CreateEmployeeForm";
 
 function Home() {
   return (

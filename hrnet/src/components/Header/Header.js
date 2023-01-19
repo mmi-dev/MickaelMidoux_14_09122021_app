@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@mui/material";
 import { HomeRounded, VisibilityRounded } from "@mui/icons-material";
+import "./Header.css";
 
 function Header() {
   const location = useLocation();
