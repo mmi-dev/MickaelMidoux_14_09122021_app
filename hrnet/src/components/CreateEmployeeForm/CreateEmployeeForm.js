@@ -18,8 +18,12 @@ import statesList from "../../data/statesList";
 import departmentsList from "../../data/departmentsList";
 import baseEmployees from "../../data/baseEmployees";
 
-if (!localStorage.employees) {
-  localStorage.employees = JSON.stringify(baseEmployees);
+const baseEmployeesNb = 48;
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+  localStorage.employees = JSON.stringify(baseEmployees(baseEmployeesNb));
+} else {
+  localStorage.employees = JSON.stringify(baseEmployees(0));
 }
 
 function CreateEmployeeForm() {
