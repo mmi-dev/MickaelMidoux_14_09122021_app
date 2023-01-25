@@ -1,9 +1,10 @@
+import { useContext } from "react";
+import EmployeesContext from "../../contexts/EmployeesProvider";
 import DataTable from "../datatables/DataTable";
 import "./EmployeesTable.css";
 
 function EmployeesTable() {
-  // to replace by state
-  const employees = JSON.parse(localStorage.getItem("employees"));
+  const { employees } = useContext(EmployeesContext);
 
   const columnsData = [
     { title: "First Name", flex: 1, minwidth: 100 },
@@ -25,26 +26,32 @@ function EmployeesTable() {
       minWidth: columnData.minwidth,
     };
   });
-
-  const rows = employees.map((employee, i) => {
-    return {
-      id: i,
-      col0: employee.firstName,
-      col1: employee.lastName,
-      col2: employee.startDate,
-      col3: employee.department,
-      col4: employee.dateOfBirth,
-      col5: employee.street,
-      col6: employee.city,
-      col7: employee.state,
-      col8: employee.zipCode,
-    };
-  });
+  const rows =
+    employees.length > 0
+      ? employees.map((employee, i) => {
+          return {
+            id: i,
+            col0: employee.firstName,
+            col1: employee.lastName,
+            col2: employee.startDate,
+            col3: employee.department,
+            col4: employee.dateOfBirth,
+            col5: employee.street,
+            col6: employee.city,
+            col7: employee.state,
+            col8: employee.zipCode,
+          };
+        })
+      : null;
 
   return (
     <>
       <div id="employees-table">
-        <DataTable columns={columns} rows={rows} qSearch></DataTable>
+        {employees.length > 0 ? (
+          <DataTable columns={columns} rows={rows} qSearch></DataTable>
+        ) : (
+          <div>no data</div> //replace by modal message
+        )}
       </div>
     </>
   );

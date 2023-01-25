@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import "./CreateEmployeeForm.css";
 import {
   Button,
@@ -16,18 +16,10 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import statesList from "../../data/statesList";
 import departmentsList from "../../data/departmentsList";
-import baseEmployees from "../../data/baseEmployees";
-
-const baseEmployeesNb = 48;
-
-if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
-  localStorage.employees = JSON.stringify(baseEmployees(baseEmployeesNb));
-} else {
-  localStorage.employees = JSON.stringify(baseEmployees(0));
-}
+import EmployeesContext from "../../contexts/EmployeesProvider";
 
 function CreateEmployeeForm() {
-  const employees = JSON.parse(localStorage.getItem("employees"));
+  const { setEmployees } = useContext(EmployeesContext);
   const [birthDateValue, setBirthDateValue] = useState(null);
   const [startDateValue, setStartDateValue] = useState(null);
   const [selectedStateValue, setSelectedStateValue] = useState("");
@@ -53,8 +45,8 @@ function CreateEmployeeForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    employees.push(record);
-    localStorage.employees = JSON.stringify(employees);
+    setEmployees((prevEmployees) => [...prevEmployees, record]);
+    // show modal confirmation
     e.target.reset();
     inputRef.current.focus();
   }
