@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import baseEmployees from "../data/baseEmployees";
 
 const EmployeesContext = createContext({});
-const baseEmployeesNb = 29; // nb of records for dev
+const baseEmployeesNb = 99; // nb of records for dev
 
 export const EmployeesProvider = ({ children }) => {
   const [employees, setEmployees] = useState({});
