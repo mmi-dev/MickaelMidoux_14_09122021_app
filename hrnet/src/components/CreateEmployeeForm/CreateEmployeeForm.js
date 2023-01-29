@@ -17,6 +17,7 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import statesList from "../../data/statesList";
 import departmentsList from "../../data/departmentsList";
 import EmployeesContext from "../../contexts/EmployeesProvider";
+import { Modal } from "mmi-simple-modal";
 
 function CreateEmployeeForm() {
   const { setEmployees } = useContext(EmployeesContext);
@@ -24,6 +25,8 @@ function CreateEmployeeForm() {
   const [startDateValue, setStartDateValue] = useState(null);
   const [selectedStateValue, setSelectedStateValue] = useState("");
   const [selectedDepartmentValue, setSelectedDepartmentValue] = useState("");
+
+  const [openModal, setOpenModal] = useState(false);
 
   const inputRef = useRef();
 
@@ -46,7 +49,7 @@ function CreateEmployeeForm() {
   function handleSubmit(e) {
     e.preventDefault();
     setEmployees((prevEmployees) => [...prevEmployees, record]);
-    // show modal confirmation
+    setOpenModal(true);
     e.target.reset();
     inputRef.current.focus();
   }
@@ -205,6 +208,12 @@ function CreateEmployeeForm() {
           </Button>
         </FormControl>
       </div>
+      <Modal
+        showModal={openModal}
+        setShowModal={setOpenModal}
+        title="Employee created !"
+        body={`The employee ${record.firstName} ${record.lastName} was added to the database.`}
+      />
     </>
   );
 }
