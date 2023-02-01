@@ -1,8 +1,50 @@
-# Getting Started with Create React App
+# HRNet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. General information
 
-## Available Scripts
+P14: Use an API for a bank user account with React
+
+---
+
+## 2. Project launching
+
+### 2.1 Prerequisites
+
+- [NodeJS](https://nodejs.org/en/)
+
+Please make sure you have the right versions and download both packages. You can verify this by using the following commands in your terminal:
+
+```bash
+# Check Node.js version
+node --version
+```
+
+### 2.2 Installation
+
+- Fork the repository
+- Clone it on your computer.
+
+### 2.3 Launching the App
+
+- Move to the front-end directory
+  ```sh
+  cd ./hrnet
+  ```
+- Initialize the front-end project & dependencies
+  ```sh
+  npm i
+  ```
+- Run the project
+  ```sh
+  npm start
+  ```
+
+### 2.4 Custom component library
+
+- [npm package](https://www.npmjs.com/package/mmi-simple-modal)
+- [github repo](https://github.com/mmi-dev/mmi-simple-modal)
+
+## 3. Available Scripts
 
 In the project directory, you can run:
 
@@ -39,32 +81,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## 4. Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
