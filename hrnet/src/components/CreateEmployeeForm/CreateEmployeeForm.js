@@ -51,6 +51,10 @@ function CreateEmployeeForm() {
     setEmployees((prevEmployees) => [...prevEmployees, record]);
     setOpenModal(true);
     e.target.reset();
+    setBirthDateValue(null);
+    setStartDateValue(null);
+    setSelectedStateValue("");
+    setSelectedDepartmentValue("");
     inputRef.current.focus();
   }
 
